@@ -269,21 +269,24 @@ export default function ProfilePage() {
   const labelClasses = "block text-sm font-semibold text-gray-300 mb-2"
 
   return (
-    <div className="min-h-screen bg-dark relative overflow-hidden">
+    <div className="min-h-screen bg-[#050510] relative overflow-hidden">
       {/* Aurora background */}
       <div className="fixed inset-0 z-0">
         <Aurora
-          colorStops={['#5227FF', '#7B5FFF', '#A78BFA', '#5227FF']}
+          colorStops={['#5227FF', '#7cff67', '#5227FF']}
           blend={0.5}
-          amplitude={1.2}
+          amplitude={0.8}
           speed={0.5}
         />
       </div>
+      <div className="fixed inset-0 z-[1] bg-gradient-to-b from-[#050510]/60 via-[#050510]/30 to-[#050510]/60" />
 
       {/* Nav */}
-      <nav className="relative z-10 border-b border-white/5 px-6 py-4 flex justify-between items-center backdrop-blur-sm bg-dark/50">
-        <Link href="/dashboard" className="text-xl font-extrabold bg-gradient-to-r from-brand-500 to-accent bg-clip-text text-transparent">
-          ContentAI
+      <nav className="relative z-10 border-b border-white/[0.06] px-6 py-4 flex justify-between items-center backdrop-blur-xl bg-[#050510]/60">
+        <Link href="/dashboard" className="text-xl font-extrabold">
+          <span className="bg-gradient-to-r from-[#5227FF] via-[#7cff67] to-[#5227FF] bg-clip-text text-transparent">
+            ContentAI
+          </span>
         </Link>
         <Link href="/dashboard" className="text-sm text-gray-400 hover:text-white transition">
           Back to Dashboard
@@ -295,7 +298,7 @@ export default function ProfilePage() {
         <div className="text-center mb-8">
           <BlurText
             text="Build Your Creator Profile"
-            className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent mb-3"
+            className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent mb-3"
             delay={80}
           />
           <p className="text-gray-400 text-sm md:text-base max-w-md mx-auto">
@@ -637,7 +640,7 @@ export default function ProfilePage() {
               type="button"
               onClick={handleSave}
               disabled={saving || !getEffectiveNiche() || getEffectivePlatforms().length === 0}
-              className="px-8 py-3.5 rounded-xl text-sm font-bold bg-gradient-to-r from-brand-500 to-accent text-white transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed shadow-lg shadow-brand-500/30 hover:shadow-brand-500/50"
+              className="px-8 py-3.5 rounded-xl text-sm font-bold bg-gradient-to-r from-[#5227FF] to-[#6B3FFF] text-white transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed shadow-lg shadow-[#5227FF]/30 hover:shadow-[0_0_30px_rgba(82,39,255,0.4)]"
             >
               {saving ? (
                 <span className="flex items-center gap-2">
